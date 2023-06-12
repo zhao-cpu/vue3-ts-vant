@@ -1,1 +1,1 @@
-declare module "weixin-js-sdk";
+declare module 'weixin-js-sdk';

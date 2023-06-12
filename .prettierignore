@@ -1,0 +1,7 @@
+/node_modules
+/public
+/dist
+.vscode
+.husky
+components.d.ts
+auto-imports.d.ts
