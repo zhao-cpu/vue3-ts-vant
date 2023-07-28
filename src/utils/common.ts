@@ -185,3 +185,28 @@ export const GetDistance = (
     s = Math.round(s * 10000) / 10;
     return s;
 };
+
+/**
+ * 下载图片
+ * @param imageSrc 下载图片的地址
+ * @param imageName 下载图片的名称
+ */
+export const downImage = (imageSrc: string, imageName: string = "photo") => {
+	const image = new Image();
+	image.setAttribute("crossOrigin", "anonymous");
+	image.src = imageSrc;
+
+	image.onload = function () {
+		const canvas = document.createElement("canvas");
+		const context = canvas.getContext("2d");
+		canvas.width = image.width;
+		canvas.height = image.height;
+		context.drawImage(image, 0, 0, image.width, image.height);
+		const url = canvas.toDataURL("image/png");
+
+		const link = document.createElement("a");
+		link.href = url;
+		link.download = imageName;
+		link.click();
+	};
+};
