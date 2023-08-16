@@ -4,7 +4,7 @@ import piniaPersist from 'pinia-plugin-persist';
 import App from './App.vue';
 import router from './router';
 import 'lib-flexible';
-import 'virtual:windi.css';
+import 'virtual:uno.css';
 import 'vant/es/toast/style';
 import 'vant/es/dialog/style';
 import 'vant/es/notify/style';

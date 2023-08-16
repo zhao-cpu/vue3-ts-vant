@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import WindiCSS from 'vite-plugin-windicss';
+import UnoCSS from 'unocss/vite';
 import * as path from 'path';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from 'unplugin-vue-components/resolvers';
@@ -13,7 +13,7 @@ export default defineConfig(() => {
     return {
         plugins: [
             vue(),
-            WindiCSS(),
+            UnoCSS(),
             Components({
                 resolvers: [VantResolver()],
             }),
