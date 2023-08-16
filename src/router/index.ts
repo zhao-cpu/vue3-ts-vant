@@ -9,6 +9,14 @@ declare module 'vue-router' {
 
 const routes: RouteRecordRaw[] = [
     {
+        path: '/',
+        name: 'home',
+        component: () => import('@/views/home/home.vue'),
+        meta: {
+            title: 'home',
+        },
+    },
+    {
         path: '/demo',
         name: 'demo',
         component: () => import('@/views/demo/demo.vue'),
@@ -39,7 +47,7 @@ const router = createRouter({
 });
 
 router.beforeEach(async () => {
-    console.log('');
+    console.log('beforeEach');
 });
 
 export default router;

@@ -7,7 +7,7 @@ export type DictType =
     | 'projectStage'
     | 'projectLabel';
 export type DictData = {
-    configuration: any;
+    configuration: unknown;
     description: string;
     id: number;
     key: string;

@@ -29,7 +29,7 @@ export const getLocalData = (key: string) => {
 };
 
 // 设置缓存
-export const setLocalData = (key: string, data: any) => {
+export const setLocalData = (key: string, data: unknown) => {
     window.localStorage.setItem(key, JSON.stringify(data));
 };
 
@@ -57,8 +57,8 @@ export const loadJs = (src: string) => {
 // 解析query
 export const parseQuery = () => {
     const str = location.search || location.hash || '';
-    const [hash, query] = str.split('?');
-    const result: any = {};
+    const [, query] = str.split('?');
+    const result: { [propName: string]: string } = {};
     if (query) {
         const strs = query.split('&');
         for (let i = 0; i < strs.length; i++) {
@@ -67,17 +67,6 @@ export const parseQuery = () => {
         }
     }
     return result;
-};
-
-// 组装新的URL
-export const routerToUrl = (router: any) => {
-    const url =
-        window.location.protocol + '//' + window.location.host + router.path;
-    const querys = [];
-    for (const key in router.query) {
-        querys.push(key + '=' + router.query[key]);
-    }
-    return url + '?' + querys.join('&');
 };
 
 // 生成随机字符串
@@ -105,10 +94,9 @@ export const dataURLtoBlob = (dataurl: string) => {
 };
 
 //将blob转换为file
-export const blobToFile = (theBlob: any, fileName: string) => {
-    theBlob.lastModifiedDate = new Date();
-    theBlob.name = fileName;
-    return theBlob;
+export const blobToFile = (blob: Blob, fileName: string) => {
+    const file = new File([blob], fileName, { type: blob.type });
+    return file;
 };
 
 export const hasLogined = (router: Router, cb?: () => void, flag = true) => {

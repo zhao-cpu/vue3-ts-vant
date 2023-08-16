@@ -5,7 +5,6 @@ import * as path from 'path';
 import Components from 'unplugin-vue-components/vite';
 import { VantResolver } from 'unplugin-vue-components/resolvers';
 
-import DefineOptions from 'unplugin-vue-define-options/vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import removeConsole from 'vite-plugin-remove-console';
 import AutoImport from 'unplugin-auto-import/vite';
@@ -18,7 +17,6 @@ export default defineConfig(() => {
             Components({
                 resolvers: [VantResolver()],
             }),
-            DefineOptions(),
             createSvgIconsPlugin({
                 // 指定需要缓存的图标文件夹(路径为存放所有svg图标的文件夹不单个svg图标)
                 iconDirs: [path.resolve(process.cwd(), 'src/assets')],

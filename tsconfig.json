@@ -16,10 +16,7 @@
         "paths": {
             "@/*": ["./src/*"]
         },
-        "types": [
-            "unplugin-vue-define-options/macros-global",
-            "vite-plugin-svg-icons/client"
-        ]
+        "types": ["vite-plugin-svg-icons/client"]
     },
     "include": [
         "src/**/*.ts",
