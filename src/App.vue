@@ -8,9 +8,9 @@
 
 <template>
     <router-view v-slot="{ Component }">
-        <keep-alive :include="keepAlive">
+        <KeepAlive :include="keepAlive">
             <component :is="Component" :key="$route.path" />
-        </keep-alive>
+        </KeepAlive>
     </router-view>
 </template>
 
