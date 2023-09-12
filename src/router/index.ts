@@ -17,6 +17,14 @@ const routes: RouteRecordRaw[] = [
         },
     },
     {
+        path: '/betterScroll',
+        name: 'betterScroll',
+        component: () => import('@/views/better-scroll/better-scroll.vue'),
+        meta: {
+            title: 'betterScroll',
+        },
+    },
+    {
         path: '/demo',
         name: 'demo',
         component: () => import('@/views/demo/demo.vue'),
