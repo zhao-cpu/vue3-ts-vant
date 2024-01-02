@@ -198,3 +198,13 @@ export const downImage = (imageSrc: string, imageName: string = "photo") => {
 		link.click();
 	};
 };
+/**
+ * 把数组格式数据转换
+ * @param obj 
+ */
+export function transformArray<T extends Record<string, any>>(obj: T) {
+  return Object.keys(obj).map(item => {
+    const value = obj[item];
+    return { [item]: Array.isArray(value) ? value.join(',') : value };
+  });
+}
